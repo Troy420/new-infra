@@ -22,3 +22,17 @@ btnHamburger.addEventListener('click', function(){
         })
     }
 })
+
+
+const headerMenu = document.querySelector('#headerMenu');
+
+headerMenu.addEventListener('click', function(){
+    if(headerMenu.classList.contains('fade-in')){
+        fadeElems.forEach(function(element){
+            element.classList.remove('fade-in');
+            element.classList.add('fade-out');
+        })
+        body.classList.remove('noscroll');
+        header.classList.remove('open');
+    }
+});
