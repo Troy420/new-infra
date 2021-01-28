@@ -1,0 +1,176 @@
+.footer {
+
+    &__content {
+        position: relative;
+        background-image: url('../../images/abstract\ blue\ and\ white\ background_original.png');
+        color: $darkBlue;
+        padding: 2.5rem;
+        text-align: center;
+        align-items: stretch;
+    
+        @include breakpoint-up(large) {
+            display: grid;
+            justify-items: start;
+            grid-template-columns: 2fr 2fr 1fr 3fr;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: 
+                "logo links contact cta"
+                "social links contact copy";
+            gap: 1rem;
+        }
+
+    }
+
+    a {
+        color: $darkBlue;
+    }
+
+    &__logo {
+
+        img {
+            height: 3rem;
+        }
+
+        @include breakpoint-down(medium) {
+            img {
+                margin-bottom: 1.875rem;
+            }
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: logo;
+        }
+
+
+    }
+
+    &__social {
+
+        img {
+            width: 2.5rem;
+            transition: all 200ms ease-in-out;
+
+            &:hover{
+                transform: scale(1.35);
+            }
+        }
+
+        a:not(:last-child){
+            margin-right: 1rem;
+        }
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: social;
+            align-self: end;
+        }
+
+    }
+
+    &__links {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2rem;
+         
+        a {
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                height: 0.3125rem;
+                width: 100%;
+                position: absolute;
+                top: 1.7rem;
+                background-color: #36096d;
+                background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+
+            &:hover {
+                color: $darkBlue;
+    
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+        }
+        
+        a:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+
+        @include breakpoint-up(large) {
+            grid-area: links;
+            align-items: start;
+        }
+
+    }
+
+    &__contact {
+
+        font-size: 0.9375rem;
+
+        > p:nth-child(even) {
+            margin: 1rem 0;
+        }
+
+        > p:nth-child(odd) {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.25rem;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+        }
+        
+        @include breakpoint-up(large) {
+            grid-area: contact;        
+            display: grid;
+            text-align: left;
+        }
+    }
+
+    &__cta {
+
+        a.button {
+            margin-bottom: 1.875rem;
+            color: $lightGrayishBlue;
+        }
+
+
+        @include breakpoint-up(large) {
+            grid-area: cta;
+            justify-self: end;
+
+        }
+    }
+
+    &__copyright {
+
+        font-size: 0.9375rem;
+
+        @include breakpoint-up(large) {
+            grid-area: copy;
+            text-align: right;
+            align-self: end;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+}

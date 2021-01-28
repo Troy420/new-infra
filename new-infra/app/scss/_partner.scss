@@ -1,0 +1,71 @@
+// .partners {
+//     border: 1px solid red;
+// }
+
+.partner {
+
+    &__content {
+
+        position: relative;
+        background-color: $lightGrayishBlue;
+        text-align: center;
+        z-index: 0;
+        
+        h2 {
+            margin-top: 1.875rem;
+            
+            @include breakpoint-up(large) {
+                text-align: left;
+            }
+        }
+
+        &::after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $lightGrayishBlue;
+            transform-origin: top left;
+            transform: skewY(4deg);
+            z-index: -1;
+        }
+
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+
+        // grid-template-columns: repeat(2, 1fr);
+
+        // @include breakpoint-up(medium) {
+        //     grid-template-columns: repeat(4, 1fr);
+        // }
+
+        // @include breakpoint-up(large) {
+        //     grid-template-columns: repeat(6, 1fr);
+        // }
+    }
+
+    &__item {
+
+        text-align: center;
+        padding: 1rem;
+
+        @include breakpoint-up(large) {
+            text-align: left;
+        }
+
+        img {
+            height: 5rem;
+        }
+    }
+
+    // &__name {
+    //     color: $darkBlue;
+    // }
+}

@@ -1,0 +1,90 @@
+// .services {
+
+// }
+
+.service {
+
+    &__content {
+        background-image: url('../../images/SVGs/Sun-Tornado.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__intro {
+        position: relative;
+        margin-bottom: 3.75rem;
+        z-index: 2;
+        text-align: center;
+
+        h2 {
+            color: $lightGrayishBlue;
+            
+            @include breakpoint-up(large) {
+                text-align: left;
+            }
+        }
+
+        p {
+            color: $veryLightGray;
+
+            @include breakpoint-up(large) {
+                text-align: left;
+            }
+        }
+
+        @include breakpoint-up(large) {
+            max-width: 80%;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.875rem;
+
+        @include breakpoint-up(large) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__item {
+        border-radius: 0.3125rem;
+        background-color: $lightGrayishBlue;
+        overflow: hidden;
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+        // transition: all 150ms ease-in-out;
+
+        // &:hover {
+        //     transform: scale(1.05);
+        // }
+    }
+
+    &__image {
+        height: 12.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__text {
+        padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+        color: $grayishBlue;
+
+        @include breakpoint-up(medium) {
+            padding: 1.875rem 1.5625rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.2;
+        color: $darkBlue;
+        margin-bottom: 0.5rem;
+    }
+
+    &__description {
+        font-size: 1rem;
+    }
+}

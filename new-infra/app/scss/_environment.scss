@@ -1,0 +1,54 @@
+.environment {
+
+    .container{
+
+        position: relative;
+        background-image: url('../../images/SVGs/Flat-Mountains.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        @include breakpoint-up(large) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__image {
+        
+        background-image: url('../../images/environment.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 2rem;
+        min-height: 31.5rem;
+
+
+        @include breakpoint-up(large) {
+            flex: 1;
+            border-radius: 50%;
+        }
+    }
+
+    &__text {
+
+        text-align: center;
+
+        > h1 {
+            color: $darkBlue;
+        }
+
+        > p {
+            color: $darkBlue;
+            // max-width: 80%;
+            line-height: 1.5;
+        }
+
+        @include breakpoint-up(large) {
+            flex: 1;
+            text-align: left;
+        }
+    }
+
+
+}

@@ -1,0 +1,83 @@
+.hero {
+
+    .container {
+    
+        position: relative;
+        background-image: url('../../images/SVGs/Liquid-Cheese.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left center;
+
+        @include breakpoint-up(large) {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    &__image {
+        position: relative;
+        min-height: 17.5rem;
+        background-image: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url('../../images/hero-img/Dedicated-Server-PNG-Transparent.png');
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 3;
+        }  
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 40%;
+            width: 40%;
+            background-image: url("../../images/hero-img/REP_PRT_DIS__RGB_DIGITAL.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 3;
+        }
+        
+        @include breakpoint-up(medium) {
+            min-height: 400px;
+
+            &::before {
+                background-size: 60%;
+            }
+        }
+
+        @include breakpoint-up(large) {
+            flex: 3;
+            order: 2;
+            height: 41rem;
+
+            &::before {
+                // width: 115%;
+                background-size: contain;
+            }
+        }
+      
+    }
+
+    &__text {
+
+        h1, p {
+            color: $veryLightGray;
+        }
+        text-align: center;
+        
+        @include breakpoint-up(large) {
+            flex: 2;
+            order: 1;
+            text-align: left;
+        }
+    }
+}
