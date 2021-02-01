@@ -25,7 +25,7 @@ body {
     }
 
     @include breakpoint-up(large) {
-        font-size: $font-med;
+        font-size: $font-lg;
     }
 }
 

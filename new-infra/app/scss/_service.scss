@@ -8,7 +8,8 @@
         background-image: url('../../images/SVGs/Sun-Tornado.svg');
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center;
+        background-attachment: fixed;
     }
 
     &__intro {

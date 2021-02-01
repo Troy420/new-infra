@@ -102,7 +102,7 @@ body.noscroll {
 
 @media (min-width: 64em) {
   body {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -460,6 +460,12 @@ button:hover, .button:hover {
   z-index: 3;
 }
 
+@media (max-width: 63.975em) {
+  .hero__image::before {
+    top: 1.875rem;
+  }
+}
+
 .hero__image::after {
   content: "";
   position: absolute;
@@ -595,6 +601,21 @@ button:hover, .button:hover {
   }
 }
 
+.feature__pdca img {
+  height: 8rem;
+}
+
+@media (min-width: 64em) {
+  .feature__pdca {
+    position: absolute;
+    right: -230px;
+    top: -90px;
+  }
+  .feature__pdca img {
+    height: 9rem;
+  }
+}
+
 .feature__icon {
   margin-bottom: 0.875rem;
 }
@@ -692,7 +713,8 @@ button:hover, .button:hover {
   background-image: url("../../images/SVGs/Sun-Tornado.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .service__intro {
@@ -980,49 +1002,77 @@ button:hover, .button:hover {
   }
 }
 
-.environment .container {
+.environment__content {
+  text-align: center;
   position: relative;
+  background-image: url("../../images/environment/environment.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (min-width: 64em) {
+  .environment__content {
+    text-align: left;
+  }
+}
+
+.environment__intro {
+  margin-bottom: 3.75rem;
+}
+
+.environment__intro > h2 {
+  color: #fafafa;
+}
+
+.environment__intro > p {
+  color: #fafafa;
+}
+
+@media (min-width: 64em) {
+  .environment__intro {
+    max-width: 80%;
+  }
+}
+
+.environment__flex {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 64em) {
+  .environment__flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.environment__flex::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url("../../images/SVGs/Flat-Mountains.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-}
-
-@media (min-width: 64em) {
-  .environment .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-.environment__image {
-  background-image: url("../../images/environment.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin: 2rem;
-  min-height: 31.5rem;
-}
-
-@media (min-width: 64em) {
-  .environment__image {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    border-radius: 50%;
-  }
+  background-position: center;
+  opacity: 0.85;
+  border-radius: 0.3125rem;
+  z-index: 1;
 }
 
 .environment__text {
   text-align: center;
-}
-
-.environment__text > h1 {
-  color: #2d314d;
+  z-index: 2;
 }
 
 .environment__text > p {
@@ -1036,6 +1086,29 @@ button:hover, .button:hover {
         -ms-flex: 1;
             flex: 1;
     text-align: left;
+  }
+}
+
+.environment__image {
+  background-image: url("../../images/environment/3Rs_2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 25rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  z-index: 2;
+}
+
+@media (min-width: 64em) {
+  .environment__image {
+    width: 50%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 /*# sourceMappingURL=style.css.map */
